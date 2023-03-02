@@ -50,6 +50,10 @@ export class Customer {
 		this.active = false;
 	}
 
+	public getAddress() : Address {
+		return this.address;
+	}
+
 	public setAddress(address: Address): void {
 		this.address = address;
 	}
@@ -60,5 +64,18 @@ export class Customer {
 
 	public setRewards(points: number): void {
 		this.rewards += points;
+	}
+
+	public toJSON(): object {
+		return {
+			id: this.getId(),
+			name: this.getName(),
+			street: this.address.getStreet(),
+			number: this.address.getNumber(),
+			zip: this.address.getZip(),
+			city: this.address.getCity(),
+			active: this.isActive(),
+			rewards: this.getRewards()
+		};
 	}
 }

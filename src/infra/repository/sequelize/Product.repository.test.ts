@@ -1,4 +1,3 @@
-import { Attributes, NonNullFindOptions } from "sequelize";
 import { Sequelize } from "sequelize-typescript";
 import { Product } from "../../../domain/entity/Product.entity";
 import { ProductMapper } from "../../mapper/sequelize/Product.mapper";
@@ -29,11 +28,7 @@ describe('Product repository', function() {
 		const newProduct = new Product("1", "Product 1", 100);
 		await productRepository.save(newProduct);
 		const product = await productRepository.find("1");
-		expect(product.toJSON()).toStrictEqual({
-			id: "1",
-			name: "Product 1",
-			price: 100
-		});
+		expect(product.toJSON()).toStrictEqual(newProduct.toJSON());
 	});
 
 	it('should be able update product', async function () {
@@ -44,11 +39,7 @@ describe('Product repository', function() {
 		newProduct.changePrice(200);
 		await productRepository.update(newProduct);
 		const product = await productRepository.find("1");
-		expect(product.toJSON()).toStrictEqual({
-			id: "1",
-			name: "Product 2",
-			price: 200
-		});
+		expect(product.toJSON()).toStrictEqual(newProduct.toJSON());
 	});
 
 	it('should be able a find product', async function () {
@@ -66,7 +57,9 @@ describe('Product repository', function() {
 		await productRepository.save(newProductOne);
 		await productRepository.save(newProductTwo);
 		const products = await productRepository.findAll();
-		expect(products).toEqual([ newProductOne, newProductTwo ]);
+		expect(products).toHaveLength(2);
+		expect(products).toContainEqual(newProductOne);
+		expect(products).toContainEqual(newProductTwo);
 	});
 
 });

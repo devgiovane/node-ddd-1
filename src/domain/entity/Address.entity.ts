@@ -24,6 +24,22 @@ export class Address {
 		}
 	}
 
+	public getStreet(): string {
+		return this.street;
+	}
+
+	public getNumber(): number {
+		return this.number;
+	}
+
+	public getZip(): string {
+		return this.zip;
+	}
+
+	public getCity(): string {
+		return this.city;
+	}
+
 	toString(): string {
 		return `${this.street}, ${this.number} - ${this.city}`;
 	}
