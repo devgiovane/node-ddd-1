@@ -1,7 +1,7 @@
-import { CustomerEntity } from "./entity/Customer.entity";
-import { AddressEntity } from "./entity/Address.entity";
-import { OrderItem } from "./entity/OrderItem.entity";
-import {Order} from "./entity/Order.entity";
+import { CustomerEntity } from "./domain/entity/Customer.entity";
+import { AddressEntity } from "./domain/entity/Address.entity";
+import { OrderItem } from "./domain/entity/OrderItem.entity";
+import {Order} from "./domain/entity/Order.entity";
 
 let customer = new CustomerEntity("1", "Giovane Santps");
 const address = new AddressEntity("Rua Julio Bertolucci", 56, "17409-020", "Jafa");

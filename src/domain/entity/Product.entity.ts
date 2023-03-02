@@ -20,6 +20,10 @@ export class Product {
 		}
 	}
 
+	public getId(): string {
+		return this.id;
+	}
+
 	public getName(): string {
 		return this.name;
 	}
@@ -36,5 +40,13 @@ export class Product {
 	public changePrice(price: number): void {
 		this.price = price;
 		this.validate();
+	}
+
+	public toJSON(): object {
+		return {
+			id: this.getId(),
+			name: this.getName(),
+			price: this.getPrice()
+		}
 	}
 }
