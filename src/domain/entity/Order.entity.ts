@@ -22,12 +22,33 @@ export class Order {
 		}
 	}
 
+	public getId(): string {
+		return this.id;
+	}
+
+	public getCustomerId(): string {
+		return this.customerId;
+	}
+
+	public getItems(): Array<OrderItem> {
+		return this.items;
+	}
+
 	public getTotal(): number {
 		return this.total;
 	}
 
 	public sumTotal(): number {
 		return this.items.reduce((total: number, item: OrderItem) => total + item.getTotalPrice(), 0);
+	}
+
+	public toJSON(): object {
+		return {
+			id: this.getId(),
+			customerId: this.getCustomerId(),
+			total: this.getTotal(),
+			items: this.getItems()
+		}
 	}
 }
 
