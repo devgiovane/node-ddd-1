@@ -69,6 +69,33 @@ describe('Order repository', function () {
 		expect(order.toJSON()).toStrictEqual(newOrder.toJSON());
 	});
 
+	it('should be able a update order', async function () {
+		const customerRepository = new CustomerRepository();
+		const newCustomer = new Customer("1", "Customer 1");
+		newCustomer.setAddress(new Address("Street", 1, "00000-000", "City"));
+		await customerRepository.save(newCustomer);
+
+		const productRepository = new ProductRepository();
+		const newProduct1 = new Product("1", "Product 1", 20);
+		await productRepository.save(newProduct1);
+
+		const orderItem1 = new OrderItem("1", newProduct1.getName(), newProduct1.getPrice(), 2, newProduct1.getId());
+		const newOrder = new Order("1", "1", [orderItem1]);
+		const orderRepository = new OrderRepository();
+		await orderRepository.save(newOrder);
+
+		const newProduct2 = new Product("2", "Product 2", 40);
+		await productRepository.save(newProduct2);
+
+		const orderItem2 = new OrderItem("2", newProduct2.getName(), newProduct2.getPrice(), 2, newProduct2.getId());
+		newOrder.addItem(orderItem2);
+
+		await orderRepository.update(newOrder);
+
+		const order = await orderRepository.find("1");
+		expect(order.toJSON()).toStrictEqual(newOrder.toJSON());
+	});
+
 	it('should be able a find all orders', async function () {
 		const customerRepository = new CustomerRepository();
 		const newCustomer = new Customer("1", "Customer 1");

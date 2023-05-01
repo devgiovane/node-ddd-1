@@ -50,16 +50,29 @@ export class OrderRepository implements IOrderRepository {
 	}
 
 	public async update(entity: Order): Promise<void> {
+		const transaction = await OrderMapper.sequelize.transaction();
+		entity.getItems().map(async function (item) {
+			await OrderItemMapper.upsert({
+				id: item.getId(),
+				name: item.getName(),
+				price: item.getPrice(),
+				productId: item.getProductId(),
+				quantity: item.getQuantity(),
+				orderId: entity.getId()
+			}, {
+				transaction
+			})
+		});
 		await OrderMapper.update({
-			id: entity.getId(),
 			customerId: entity.getCustomerId(),
 			total: entity.getTotal(),
 		}, {
 			where: {
 				id: entity.getId()
 			},
-			returning: undefined
+			transaction
 		});
+		await transaction.commit();
 	}
 
 }

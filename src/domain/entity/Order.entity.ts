@@ -2,7 +2,7 @@ import { OrderItem } from "./OrderItem.entity";
 
 export class Order {
 
-	private readonly total: number = 0;
+	private total: number = 0;
 
 	constructor(
 		private id: string,
@@ -28,6 +28,11 @@ export class Order {
 
 	public getCustomerId(): string {
 		return this.customerId;
+	}
+
+	public addItem(item: OrderItem): void {
+		this.items.push(item);
+		this.total = this.sumTotal();
 	}
 
 	public getItems(): Array<OrderItem> {
