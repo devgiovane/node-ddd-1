@@ -1,4 +1,6 @@
-export class Product {
+import { IProduct } from "~@Domain/entity/IProduct";
+
+export class Product implements IProduct {
 
 	constructor(
 		private id: string,
@@ -49,4 +51,5 @@ export class Product {
 			price: this.getPrice()
 		}
 	}
+
 }
