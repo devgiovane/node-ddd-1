@@ -4,12 +4,12 @@ import { OrderMapper } from "../../mapper/sequelize/Order.mapper";
 import { OrderItemMapper } from "../../mapper/sequelize/OrderItem.mapper";
 import { ProductMapper } from "../../mapper/sequelize/Product.mapper";
 import { CustomerRepository } from "./Customer.repository";
-import { Customer } from "../../../domain/entity/Customer.entity";
-import { Address } from "../../../domain/entity/Address.entity";
+import { Customer } from "~@Domain/entity/Customer.entity";
+import { Address } from "~@Domain/entity/Address.entity";
 import { ProductRepository } from "./Product.repository";
-import { Product } from "../../../domain/entity/Product.entity";
-import { OrderItem } from "../../../domain/entity/OrderItem.entity";
-import { Order } from "../../../domain/entity/Order.entity";
+import { Product } from "~@Domain/entity/Product.entity";
+import { OrderItem } from "~@Domain/entity/OrderItem.entity";
+import { Order } from "~@Domain/entity/Order.entity";
 import { OrderRepository } from "./Order.repository";
 
 describe('Order repository', function () {

@@ -1,4 +1,4 @@
-import { IEvent } from "../../IEvent";
+import { IEvent } from "../../@shared/IEvent";
 
 export class CustomerChangedAddressEvent implements IEvent {
 

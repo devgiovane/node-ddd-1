@@ -21,6 +21,16 @@
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
         "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true
-    }
+        "forceConsistentCasingInFileNames": true,
+		"baseUrl": ".",
+		"typeRoots": [
+			"./@types",
+			"./src/@types",
+			"./node_modules/@types"
+		],
+		"paths": {
+			"~@Domain/*": [ "src/domain/*" ],
+			"~@Infra/*": [ "src/infra/*" ]
+		}
+	}
 }

@@ -1,7 +1,7 @@
-import { EventDispatcher } from "../Event.dispatcher";
-import { CustomerCreatedEvent } from "./created/CustomerCreated.event";
-import { SendConsoleLogOneHandler } from "./created/SendConsoleLogOne.handler";
-import { SendConsoleLogTwoHandler } from "./created/SendConsoleLogTwo.handler";
+import { EventDispatcher } from "../../@shared/Event.dispatcher";
+import { CustomerCreatedEvent } from "./CustomerCreated.event";
+import { SendConsoleLogOneHandler } from "./SendConsoleLogOne.handler";
+import { SendConsoleLogTwoHandler } from "./SendConsoleLogTwo.handler";
 
 describe('Customer Created Event Dispatcher', function () {
 

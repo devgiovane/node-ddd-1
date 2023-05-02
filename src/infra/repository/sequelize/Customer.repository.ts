@@ -1,7 +1,7 @@
-import { ICustomerRepository } from "../../../domain/repository/ICustomer.repository";
-import { Customer } from "../../../domain/entity/Customer.entity";
+import { ICustomerRepository } from "~@Domain/repository/ICustomer.repository";
+import { Customer } from "~@Domain/entity/Customer.entity";
 import { CustomerMapper } from "../../mapper/sequelize/Customer.mapper";
-import { Address } from "../../../domain/entity/Address.entity";
+import { Address } from "~@Domain/entity/Address.entity";
 
 export class CustomerRepository implements ICustomerRepository {
 

@@ -1,6 +1,6 @@
-import { EventDispatcher } from "../Event.dispatcher";
-import { ProductCreatedEvent } from "./created/ProductCreated.event";
-import { SendEmailWhenProductCreatedHandler } from "./created/SendEmailWhenProductCreated.handler";
+import { EventDispatcher } from "../../@shared/Event.dispatcher";
+import { ProductCreatedEvent } from "./ProductCreated.event";
+import { SendEmailWhenProductCreatedHandler } from "./SendEmailWhenProductCreated.handler";
 
 describe('Product Created Event Dispatcher', function () {
 

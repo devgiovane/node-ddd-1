@@ -1,4 +1,4 @@
-import { IEventHandler } from "../../IEvent.handler";
+import { IEventHandler } from "../../@shared/IEvent.handler";
 import { CustomerChangedAddressEvent } from "./CustomerChangedAddress.event";
 
 export class SendConsoleLogHandler implements IEventHandler {

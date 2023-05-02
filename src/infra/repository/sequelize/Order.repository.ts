@@ -1,6 +1,6 @@
-import { IOrderRepository } from "../../../domain/repository/IOrder.repository";
-import { Order } from "../../../domain/entity/Order.entity";
-import { OrderItem } from "../../../domain/entity/OrderItem.entity";
+import { IOrderRepository } from "~@Domain/repository/IOrder.repository";
+import { Order } from "~@Domain/entity/Order.entity";
+import { OrderItem } from "~@Domain/entity/OrderItem.entity";
 import { OrderMapper } from "../../mapper/sequelize/Order.mapper";
 import { OrderItemMapper } from "../../mapper/sequelize/OrderItem.mapper";
 

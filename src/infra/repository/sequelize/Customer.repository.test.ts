@@ -1,9 +1,8 @@
 import { Sequelize} from "sequelize-typescript";
 import { CustomerMapper } from "../../mapper/sequelize/Customer.mapper";
 import { CustomerRepository } from "./Customer.repository";
-import { Customer } from "../../../domain/entity/Customer.entity";
-import { Address } from "../../../domain/entity/Address.entity";
-import {rejects} from "assert";
+import { Customer } from "~@Domain/entity/Customer.entity";
+import { Address } from "~@Domain/entity/Address.entity";
 
 describe('Customer repository', function () {
 

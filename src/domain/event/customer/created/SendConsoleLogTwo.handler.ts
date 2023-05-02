@@ -1,4 +1,4 @@
-import { IEventHandler } from "../../IEvent.handler";
+import { IEventHandler } from "../../@shared/IEvent.handler";
 import { CustomerCreatedEvent } from "./CustomerCreated.event";
 
 export class SendConsoleLogTwoHandler implements IEventHandler {

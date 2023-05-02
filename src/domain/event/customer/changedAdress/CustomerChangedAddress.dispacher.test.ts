@@ -1,6 +1,6 @@
-import { EventDispatcher } from "../Event.dispatcher";
-import { SendConsoleLogHandler } from "./changedAdress/SendConsoleLog.handler";
-import { CustomerChangedAddressEvent } from "./changedAdress/CustomerChangedAddress.event";
+import { EventDispatcher } from "../../@shared/Event.dispatcher";
+import { SendConsoleLogHandler } from "./SendConsoleLog.handler";
+import { CustomerChangedAddressEvent } from "./CustomerChangedAddress.event";
 
 describe('Customer Changed Address Event Dispatcher', function () {
 
