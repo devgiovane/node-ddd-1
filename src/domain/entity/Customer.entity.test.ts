@@ -1,7 +1,7 @@
 import { Customer } from "./Customer.entity";
 import { Address } from "./Address.entity";
 
-describe('CustomerEntity Entity', function () {
+describe('Customer Entity', function () {
 
 	it('should be able error when id is empty', function () {
 		expect(function () {
