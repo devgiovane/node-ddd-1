@@ -1,7 +1,7 @@
 import { IEventHandler } from "../../@shared/IEvent.handler";
 import { CustomerChangedAddressEvent } from "./CustomerChangedAddress.event";
 
-export class SendConsoleLogHandler implements IEventHandler {
+export class SendConsoleLogHandler implements IEventHandler<CustomerChangedAddressEvent> {
 
 	public handle(event: CustomerChangedAddressEvent) {
 		const { id, name, address } = event.data;
