@@ -1,8 +1,8 @@
-import { EventDispatcher } from "./Event.dispatcher";
-import { SendEmailWhenProductCreatedHandler } from "./product/SendEmailWhenProductCreated.handler";
-import {ProductCreatedEvent} from "./product/ProductCreated.event";
+import { EventDispatcher } from "../Event.dispatcher";
+import { ProductCreatedEvent } from "./created/ProductCreated.event";
+import { SendEmailWhenProductCreatedHandler } from "./created/SendEmailWhenProductCreated.handler";
 
-describe('Domain Event Dispatcher', function () {
+describe('Product Created Event Dispatcher', function () {
 
 	it('should be able a register event', function () {
 		const eventDispatcher = new EventDispatcher();
